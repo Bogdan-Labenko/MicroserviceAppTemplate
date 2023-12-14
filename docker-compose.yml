@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  back-end-1:
+    image: ${DOCKER_REGISTRY-}backend
+    build:
+      context: .
+      dockerfile: back-end/Dockerfile
+  back-end-2:
+    image: ${DOCKER_REGISTRY-}backend
+    build:
+      context: .
+      dockerfile: back-end/Dockerfile
+  back-end-3:
+    image: ${DOCKER_REGISTRY-}backend
+    build:
+      context: .
+      dockerfile: back-end/Dockerfile
+  front-end-1:
+    image: frontend
+    build: 
+      context: ./front-end
+      dockerfile: Dockerfile
+  proxy: 
+    image: "nginx:mainline"
